@@ -1,0 +1,69 @@
+* {
+  font-weight: 600;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.08);
+  --text-primary: #f8fafc;
+  --accent: #667eea;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Reduce brightness for glassmorphism */
+[class*="container"], [class*="card"], [class*="glass"] {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Ensure white bold text everywhere */
+h1, h2, h3, h4, h5, h6, label, p, span, input::placeholder {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Form inputs - better readability */
+input, textarea, select {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+input::placeholder {
+  color: rgba(248,250,252,0.6) !important;
+  font-weight: 500;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+}
+
+/* Buttons */
+button {
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+
+/* Responsive */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: all 0.2s ease;
+  }
+}
+
